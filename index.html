@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triagem SNS24</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/logo-SNS.png" alt="SNS Logo">
+            <h1>Sistema Inteligente de Triagem Clínica</h1>
+        </div>
+        <div class="theme-switcher">
+            <button id="theme-toggle-btn" title="Alterar tema">🌙</button>
+        </div>
+    </header>
+
+    <main id="app-container">
+        <!-- User Identification Section -->
+        <section id="identification-section" class="card">
+            <h2>Identificação do Utente</h2>
+            <div id="nif-form">
+                <label for="nif">NIF (Número de Identificação Fiscal):</label>
+                <input type="text" id="nif" name="nif" maxlength="9" placeholder="Introduza 9 dígitos">
+                <button id="nif-submit">Iniciar Triagem</button>
+            </div>
+            <div id="registration-form" class="hidden">
+                <p>Utente não encontrado. Por favor, complete o registo.</p>
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome">
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" name="idade">
+                <button id="register-submit">Registar e Iniciar</button>
+            </div>
+            <div id="welcome-container" class="hidden">
+                <div id="user-welcome"></div>
+                <div id="welcome-actions" class="welcome-actions-container">
+                    <button id="history-btn" class="secondary-btn">Ver Histórico de Triagens</button>
+                    <button id="proceed-triage-btn">Avançar Triagem</button>
+                </div>
+            </div>
+            <p id="id-error" class="error-message"></p>
+        </section>
+
+        <!-- Triage Section -->
+        <section id="triage-section" class="card hidden">
+            <h2>Avaliação de Sintomas</h2>
+            <div id="loader" class="loader-container hidden">
+                <div class="loader"></div>
+                <p>A processar a sua resposta...</p>
+            </div>
+            <div id="question-container">
+                <!-- Questions will be dynamically inserted here -->
+            </div>
+            <p id="triage-error" class="error-message"></p>
+        </section>
+
+        <!-- Result Section -->
+        <section id="result-section" class="card hidden">
+            <h2>Relatório Clínico</h2>
+            <div id="result-content">
+                <!-- Final report will be displayed here -->
+            </div>
+            <button id="restart-button">Iniciar Nova Triagem</button>
+        </section>
+
+        <!-- History Section -->
+        <section id="history-section" class="card hidden">
+            <h2>Histórico de Triagens</h2>
+            <div id="history-content">
+                <!-- History table will be inserted here -->
+            </div>
+            <button id="close-history-btn">Fechar Histórico</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Este é um sistema de apoio à decisão e não substitui uma consulta médica profissional.</p>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>

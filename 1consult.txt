@@ -1,0 +1,1 @@
+consult('C:\\Users\\josec\\OneDrive\\Ambiente de Trabalho\\sistemas inteligentes\\projeto\\main.pl').
